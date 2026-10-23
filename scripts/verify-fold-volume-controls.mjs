@@ -1,0 +1,57 @@
+import {createRequire} from 'node:module';
+import {writeFileSync,readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+const require=createRequire('C:/Users/Starrism/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/package.json');
+const {chromium}=require('playwright');
+const browser=await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true});
+const page=await browser.newPage({viewport:{width:390,height:844},hasTouch:true,isMobile:true});
+const report={};const names=['阿蛋','凌瑞','软软','小小飞','忆安','小辞','卡密望','重阳'];
+try{
+ await page.goto('http://127.0.0.1:5173/');
+ await page.waitForFunction(()=>Array.from(document.querySelectorAll('button')).some(b=>b.textContent.startsWith('头像库')&&!b.disabled));
+ assert.deepEqual(await page.locator('.controls button').allTextContents(),['拍肚子','头像库','恢复原版']);
+ const boxes=await page.locator('.controls button').evaluateAll(bs=>bs.map(b=>{const r=b.getBoundingClientRect();return {x:r.x,y:r.y,w:r.width};}));
+ assert(Math.abs(boxes[0].w-boxes[1].w)<1);assert.equal(boxes[0].y,boxes[1].y);
+ assert(boxes[2].y>boxes[0].y);assert(Math.abs(boxes[2].w-(boxes[0].w+boxes[1].w+8))<1);
+ report.twoEqualButtonsAndFullWidthRestore=true;
+ const audio=await page.locator('audio').evaluateAll(ns=>ns.map(a=>({src:a.getAttribute('src'),volume:a.volume,rate:a.playbackRate,loop:a.loop})));
+ assert(audio.every(a=>a.volume===.5&&a.rate===1&&!a.loop));report.audioVolumes=audio;
+ await page.getByRole('button',{name:'头像库',exact:true}).click();const dlg=page.getByRole('dialog');
+ assert.equal(await dlg.getByText('开发者工具',{exact:true}).count(),0);
+ assert.equal(await dlg.getByRole('button',{name:/导出头像包/}).count(),0);
+ await dlg.getByRole('button',{name:'解锁隐藏头像',exact:true}).click();
+ await dlg.getByLabel('解锁口令').fill('uugnb');await dlg.getByRole('button',{name:'解锁',exact:true}).click();
+ const toggle=dlg.getByRole('button',{name:'uug',exact:true});
+ await page.waitForFunction(()=>document.querySelector('.friends-toggle')?.getAttribute('aria-expanded')==='true');
+ assert.deepEqual(await dlg.locator('[data-library="builtin"] .face-select>span').allTextContents(),names);
+ await dlg.getByRole('button',{name:'使用 阿蛋',exact:true}).click();
+ await page.waitForFunction(()=>document.querySelector('.stage-heading span:last-child').textContent==='阿蛋');
+ await toggle.click();
+ await page.waitForFunction(()=>document.querySelector('.friends-toggle').getAttribute('aria-expanded')==='false');
+ assert.equal(await dlg.locator('#uug-faces').count(),0);
+ assert.equal(await page.locator('.stage-heading span').last().innerText(),'阿蛋');
+ await dlg.getByRole('button',{name:'关闭',exact:true}).click();
+ await page.getByRole('button',{name:'头像库',exact:true}).click();
+ assert.equal(await toggle.getAttribute('aria-expanded'),'false');
+ await page.reload();await page.waitForFunction(()=>document.querySelector('.stage-heading span:last-child').textContent==='阿蛋');
+ await page.getByRole('button',{name:'头像库',exact:true}).click();
+ assert.equal(await toggle.getAttribute('aria-expanded'),'false');
+ assert.equal(await dlg.getByRole('button',{name:'解锁隐藏头像',exact:true}).count(),0);
+ await toggle.click();await page.waitForFunction(()=>document.querySelector('.friends-toggle').getAttribute('aria-expanded')==='true');
+ assert.equal(await dlg.getByRole('button',{name:'使用 阿蛋',exact:true}).getAttribute('aria-pressed'),'true');
+ assert.deepEqual(await dlg.locator('[data-library="builtin"] .face-select>span').allTextContents(),names);
+ report.unlockOpensOnce=true;report.collapseRemovesCardsWithoutChangingFace=true;report.reopenAndRefreshKeepFold=true;report.selectionAndOrderRetained=true;report.developerToolsRemoved=true;
+ await toggle.click();await page.waitForFunction(()=>document.querySelector('.friends-toggle').getAttribute('aria-expanded')==='false');
+ await page.screenshot({path:'D:/naiwa/docs/uug-collapsed-mobile.png',fullPage:true});
+ await dlg.getByRole('button',{name:'＋ 上传新头像',exact:true}).click();
+ assert.equal(await dlg.getByLabel('选择照片').count(),1);report.uploadStillAvailableFromLibrary=true;
+ await dlg.getByRole('button',{name:'取消',exact:true}).click();
+ assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));report.noMobileOverflow=true;
+ await page.screenshot({path:'D:/naiwa/docs/three-controls-mobile.png',fullPage:true});
+ for(const [file,hash]of [['bingbingbing.mp3','CD81C6E0BCE7AA01952FEF3933C3BFC1DE96E80B5CB8A52D7F2897C2447261E0'],['laugh.mp3','4467862CC96C77BB81A96D33B743CA09337B30108E2AF89CA20BA3D648C5A270']]){
+  assert.equal(createHash('sha256').update(readFileSync('D:/naiwa/public/audio/'+file)).digest('hex').toUpperCase(),hash);
+ }
+ report.mp3BytesUnchanged=true;
+ writeFileSync('D:/naiwa/docs/fold-volume-controls-verification.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
+}finally{await browser.close();}

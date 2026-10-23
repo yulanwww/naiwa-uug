@@ -1,0 +1,183 @@
+{
+  "format": "naiwa-avatar-pack",
+  "version": 1,
+  "exportedAt": "2026-10-23T17:37:05.894Z",
+  "avatars": [
+    {
+      "id": "builtin-friend-01",
+      "name": "阿蛋",
+      "source": "/avatars/01.webp",
+      "crop": {
+        "x": -0.014115477196969298,
+        "y": 2.046908599400105,
+        "zoom": 3.91
+      },
+      "placement": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+      },
+      "anchors": {},
+      "updatedAt": 1792776361493,
+      "originalId": "3224ea35-eb5d-4e2e-9b3c-2fb7ae57a833",
+      "order": 1,
+      "imagePath": "/avatars/01.webp",
+      "sha256": "2b7587ecf0f64715b459afb661138ab8a41b8a11dda32a7e2b9e81c4dec9ba46",
+      "byteLength": 39576
+    },
+    {
+      "id": "builtin-friend-02",
+      "name": "凌瑞",
+      "source": "/avatars/02.webp",
+      "crop": {
+        "x": -0.03293814183167383,
+        "y": 2.0233810629028706,
+        "zoom": 3.91
+      },
+      "placement": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+      },
+      "anchors": {},
+      "updatedAt": 1792776411741,
+      "originalId": "25430d20-2300-4429-9b3d-519b319d31f1",
+      "order": 2,
+      "imagePath": "/avatars/02.webp",
+      "sha256": "4765ca338dd633ae75cb836439105cb3aa7709c4383bf3888a8f26d1cc5e3fb4",
+      "byteLength": 36300
+    },
+    {
+      "id": "builtin-friend-03",
+      "name": "软软",
+      "source": "/avatars/03.webp",
+      "crop": {
+        "x": -0.00470551806956419,
+        "y": 1.9810305925179996,
+        "zoom": 3.87
+      },
+      "placement": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+      },
+      "anchors": {},
+      "updatedAt": 1792776454456,
+      "originalId": "703260b9-58f7-45e7-bde9-6e3d082d5214",
+      "order": 3,
+      "imagePath": "/avatars/03.webp",
+      "sha256": "2c920b124f9f01068c065bafdc9e1791d35369b6f9f7201fa8855be2b00ee0a7",
+      "byteLength": 37674
+    },
+    {
+      "id": "builtin-friend-04",
+      "name": "小小飞",
+      "source": "/avatars/04.webp",
+      "crop": {
+        "x": -0.0470552883968142,
+        "y": 1.9104475522216062,
+        "zoom": 3.6
+      },
+      "placement": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+      },
+      "anchors": {},
+      "updatedAt": 1792776481306,
+      "originalId": "0be9e181-1a8c-4bf2-9ff7-20b39f49a6a1",
+      "order": 4,
+      "imagePath": "/avatars/04.webp",
+      "sha256": "1023ccebe226325828965c819f64ac496bfdb5c25039b3f3c680a2f13eee8231",
+      "byteLength": 40338
+    },
+    {
+      "id": "builtin-friend-05",
+      "name": "忆安",
+      "source": "/avatars/05.png",
+      "crop": {
+        "x": -0.009410497633266741,
+        "y": 1.9763253437013673,
+        "zoom": 3.73
+      },
+      "placement": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+      },
+      "anchors": {},
+      "updatedAt": 1792774991051,
+      "originalId": "8a67fac2-bcb0-4a76-9468-43c98bec7512",
+      "order": 5,
+      "imagePath": "/avatars/05.png",
+      "sha256": "e4e1df0115906908a4837b9ffd9ea93893e388067bded82acf133163c25e1dee",
+      "byteLength": 1434606
+    },
+    {
+      "id": "builtin-friend-06",
+      "name": "小辞",
+      "source": "/avatars/06.webp",
+      "crop": {
+        "x": -0.023527644198407152,
+        "y": 2.06573024087367,
+        "zoom": 3.83
+      },
+      "placement": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+      },
+      "anchors": {},
+      "updatedAt": 1792776517522,
+      "originalId": "ba55bda7-5581-4c0e-a28b-767f1a493b05",
+      "order": 6,
+      "imagePath": "/avatars/06.webp",
+      "sha256": "97434e4fea56a0be442806b8e47183914a622971c887fcd6fe0f97550fd57313",
+      "byteLength": 41004
+    },
+    {
+      "id": "builtin-friend-07",
+      "name": "卡密望",
+      "source": "/avatars/07.webp",
+      "crop": {
+        "x": -0.023527105692545475,
+        "y": 2.1316080323534328,
+        "zoom": 4.14
+      },
+      "placement": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+      },
+      "anchors": {},
+      "updatedAt": 1792776554506,
+      "originalId": "cefc989d-d632-4d03-9b29-a3bfc11c2fa6",
+      "order": 7,
+      "imagePath": "/avatars/07.webp",
+      "sha256": "6f15e50ec02f1a40dead0a6da45578dcdcdf05fc1d907768e09d40bad45bd0e4",
+      "byteLength": 37026
+    },
+    {
+      "id": "builtin-friend-08",
+      "name": "重阳",
+      "source": "/avatars/08.webp",
+      "crop": {
+        "x": -0.03293814183167384,
+        "y": 2.0751413847139735,
+        "zoom": 3.91
+      },
+      "placement": {
+        "x": 0,
+        "y": 0,
+        "scale": 1
+      },
+      "anchors": {},
+      "updatedAt": 1792776574271,
+      "originalId": "205a5d32-3949-478e-b654-2f99e6eeb8db",
+      "order": 8,
+      "imagePath": "/avatars/08.webp",
+      "sha256": "758f2c01ee1b9561a9fa68ffe68d8763b91776a9195d27b701ca9d82ed099c0d",
+      "byteLength": 40686
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+node_modules/
+dist/
+*.log
+.qa/
+
+# Local-only backups, browser profiles, QA artifacts and secrets
+backups/
+.vercel/
+.env
+.env.*
+!.env.example
+.npmrc
+*.pem
+*.key
+docs/*.png
+docs/*results.json
+docs/*verification.json
+
+# Temporary files and local visual QA exports
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.orig
+*.swp
+*.zip
+docs/*.jpg
+docs/*.jpeg
+docs/*.gif
+docs/*.webp
+docs/verification.json

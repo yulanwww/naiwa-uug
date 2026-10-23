@@ -1,0 +1,53 @@
+{
+  "source": "用户提供：腐坏鸡蛋冲击特效素材表.png",
+  "sourceRows": [
+    1,
+    2
+  ],
+  "processing": "imagegen 背景移除和阶段整理；保留透明通道。未使用第三、四行。",
+  "atlas": "/effects/egg-stages.png",
+  "durationMs": 1120,
+  "flightMs": 420,
+  "stages": [
+    {
+      "name": "intact",
+      "file": "/effects/egg-00.png",
+      "order": 0
+    },
+    {
+      "name": "cracked",
+      "file": "/effects/egg-01.png",
+      "order": 1
+    },
+    {
+      "name": "opening",
+      "file": "/effects/egg-02.png",
+      "order": 2
+    },
+    {
+      "name": "burst",
+      "file": "/effects/egg-03.png",
+      "order": 3
+    },
+    {
+      "name": "splash-1",
+      "file": "/effects/egg-04.png",
+      "order": 4
+    },
+    {
+      "name": "splash-2",
+      "file": "/effects/egg-05.png",
+      "order": 5
+    },
+    {
+      "name": "splash-3",
+      "file": "/effects/egg-06.png",
+      "order": 6
+    },
+    {
+      "name": "splash-4",
+      "file": "/effects/egg-07.png",
+      "order": 7
+    }
+  ]
+}
